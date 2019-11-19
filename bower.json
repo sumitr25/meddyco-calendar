@@ -1,0 +1,27 @@
+{
+  "name": "AngularJS Reservation Calendar",
+  "version": "1.0.0",
+  "authors": ["Sumit Rajput <grt.sumitr25@gmail.com>"],
+  "description": "Description goes here",
+  "main": "app.js",
+  "keywords": [
+    "angularjs"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.13",
+    "angular-route": "~1.3.13",
+    "angular-sanitize": "~1.3.13",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.27"
+  }
+}
