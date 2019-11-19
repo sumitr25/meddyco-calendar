@@ -32,6 +32,17 @@
   function config($routeProvider, $locationProvider, $httpProvider, $compileProvider) {
 
     $locationProvider.html5Mode(false);
+
+    // routes
+    $routeProvider
+      .when('/', {
+        templateUrl: 'views/home.html',
+        controller: 'MainController',
+        controllerAs: 'main'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
   }
 
   /**
@@ -48,4 +59,6 @@
     // put here everything that you need to run on page load
 
   }
+
+
 })();

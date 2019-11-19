@@ -1,0 +1,45 @@
+<div class="datepicker-box">
+	<div class="date-picker">
+		<div class="indicator">
+			<button ng-click="previous()" class="btn prev">Prev Month</button>
+			<span>{{month.format("MMMM, YYYY")}}</span>
+			<button ng-click="next()" class="btn next">Next Month</button>
+		</div>
+		<table>
+		    <tr>
+		        <th ng-repeat="day in days"><span ng-bind="day"></span></th>
+		    </tr>
+		    <tr ng-repeat="week in weeks">
+		        <td ng-repeat="day in week.days" ng-class="getClass(day)" ng-click="selectDate(day)"><span ng-bind="day.number"></span></td>
+		    </tr>
+		</table>
+	</div>
+
+	<div class="stay-modal">
+		<div id="confirm-stay" class="confirm-stay">
+			<button ng-click="closeConfirmStay()" type="button" class="close">&times;</button>
+			<div>
+				Tenant Name:
+				<input type="text" name="tenantName" ng-model="tenantName" placeholder="Enter tenant name" />
+			</div>
+
+			<div>
+				Stay date: {{getFormattedDate(selected)}}
+			</div>
+
+			<button type="button" ng-click="addReservation(day)" class="button">Confirm Stay</button>
+		</div>
+
+		<div id="cancel-stay" class="cancel-stay">
+			<button ng-click="closeCancelStay()" type="button" class="close">&times;</button>
+			<div>
+				Tenant Name: {{tenant.tennantName}}
+			</div>
+
+			<div>
+				Stay date: {{getFormattedDate(selected)}}
+			</div>
+
+			<button type="button" ng-click="cancelReservation(day)" class="button">Cancel Stay</button>
+		</div>
+	</div>
